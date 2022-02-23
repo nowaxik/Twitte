@@ -130,7 +130,7 @@ include 'header.php';
                                         <div class="col">
                                             <p class="lh-sm">
                                                 <?php 
-                                                    if($rowComment["id"] == $id){
+                                                    if($rowComment["post_id"] == $id){
                                                     echo $rowComment["comment_text"];
                                                     }
                                                 ?>
