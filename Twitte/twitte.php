@@ -93,6 +93,8 @@ include 'header.php';
                                         <button type="submit" name="submit" class="btn btn-primary btn-sm">Skomentuj</button>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
                                 <?php
                                     }
                                 ?>
@@ -103,7 +105,6 @@ include 'header.php';
                                     if ($result->num_rows > 0) {
                                     // output data of each row
                                     while($rowComment = $result->fetch_assoc()) {
-                                        if($rowComment["post_id"] == $id) {
                                 ?>
                                 <div class="row">
                                     <div class="col">
@@ -126,10 +127,8 @@ include 'header.php';
                                 <?php
                                         }
                                     }
-                                }
+                                
                                 ?>
-                            </div>
-                        </div>
                         <?php
                         //}
                             } else {
