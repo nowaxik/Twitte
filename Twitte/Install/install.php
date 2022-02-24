@@ -57,7 +57,7 @@ if ($conn->query($sql) === TRUE) {
 
 // Tabela przechowywująca wpisy użytkowników
 $sql = "CREATE TABLE HomePage (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    post_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     posttext LONGTEXT NOT NULL,
     userview VARCHAR(30) NOT NULL,
     username VARCHAR(30) NOT NULL,
@@ -75,7 +75,7 @@ if ($conn->query($sql) === TRUE) {
 // Tabela przechowywująca komentarze do poszczegółnych wpisów. 
 $sql = "CREATE TABLE Comments (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    post_id INT(6) NOT NULL,
+    comment_id INT(6) NOT NULL,
     comment_text LONGTEXT NOT NULL,
     userview VARCHAR(30) NOT NULL,
     username VARCHAR(30) NOT NULL,
