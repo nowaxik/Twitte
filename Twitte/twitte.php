@@ -19,7 +19,7 @@ include 'header.php';
             <!-- Lewa strona okna, jest tam menu oraz informacje o użytkowniku -->
             <div class="TwitteProfile">
                 <?php
-                echo "<p>Witaj ".$_SESSION['userview'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+                    echo "<p>Witaj ".$_SESSION['userview'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
                 ?>
 
                 <aside>
@@ -58,18 +58,17 @@ include 'header.php';
                             die("Connection failed: " . $conn->connect_error);
                             }
 
-                            $sql = "SELECT id, posttext, userview, username, heart, add_date FROM homepage WHERE id > 0";
+                            $sql = "SELECT homepage.id, homepage.posttext, homepage.userview, homepage.username, homepage.heart, homepage.add_date, comments.comment_id, comments.comment_text, comments.userview, comments.username, comments.reg_date FROM homepage, comments";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
-                                $id = $row["id"];
                         ?>
                     
                         <div class="row">
                             <div class="col">
-                                <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
+                                <span style="font-weight: bold;"><?php echo $row["homepage.userview"]; ?></span>
                                 <?php echo "@".$row["username"]." - "; ?>
                                 <?php echo $row["add_date"]; ?>
                             </div>
@@ -95,42 +94,26 @@ include 'header.php';
                                 </form>
                             </div>
                         </div>
-                                <?php
-                                    }
-                                ?>
-                                <?php
-                                    $comm = "SELECT id, post_id, comment_text, userview, username, reg_date FROM comments WHERE id>0";
-                                    $result = $conn->query($comm);
-                
-                                    if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($rowComment = $result->fetch_assoc()) {
-                                ?>
                                 <div class="row">
                                     <div class="col">
-                                        <span style="font-weight: bold;"><?php echo $rowComment["userview"]; ?></span>
-                                        <?php echo "@".$rowComment["username"]." - "; ?>
-                                        <?php echo $rowComment["reg_date"]; ?>
+                                        <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
+                                        <?php echo "@".$row["username"]." - "; ?>
+                                        <?php echo $row["reg_date"]; ?>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <p class="lh-sm">
                                             <?php 
-                                                if($rowComment["post_id"] == $id){
-                                                echo $rowComment["comment_text"];
-                                                }
+                                               
+                                                echo $row["comment_text"];
+                                                
                                             ?>
                                         </p>
                                     </div>
                                 </div>
-                                <?php
-                                        }
-                                    }
-                                
-                                ?>
                         <?php
-                        //}
+                        }
                             } else {
                             echo "0 results";
                             }
