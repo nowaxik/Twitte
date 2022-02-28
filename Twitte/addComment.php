@@ -35,7 +35,7 @@ echo "Połączono z serwerem i bazą danych";
 <?php
     //Skrypt dodania danych do tabeli
     //"name" to nazwa tabeli
-    $sql = "INSERT INTO comments (post_id, comment_text, userview, username) 
+    $sql = "INSERT INTO comments (comment_id, comment_text, userview, username) 
         VALUES ( '$idPost', '$comment', '$userviewcom', '$usernamedb')";
 
     if ($conn->query($sql) === TRUE) {
