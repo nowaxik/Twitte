@@ -41,7 +41,7 @@ include 'header.php';
                     </form>
                 </section>
                 <!-- Koniec sekcji wiadomości -->
-
+             
                 <!-- Sekcja wyświetlania postów -->
                 <section>
                     <div class="container">
@@ -58,17 +58,19 @@ include 'header.php';
                             die("Connection failed: " . $conn->connect_error);
                             }
 
-                            $sql = "SELECT homepage.id, homepage.posttext, homepage.userview, homepage.username, homepage.heart, homepage.add_date, comments.comment_id, comments.comment_text, comments.userview, comments.username, comments.reg_date FROM homepage, comments";
+                            $sql = "SELECT id, posttext, userview, username, heart, add_date FROM homepage";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
                             // output data of each row
                             while($row = $result->fetch_assoc()) {
+                                
                         ?>
-                    
+                            <?php $id = $row['id']; ?>
+                            <hr>
                         <div class="row">
                             <div class="col">
-                                <span style="font-weight: bold;"><?php echo $row["homepage.userview"]; ?></span>
+                                <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
                                 <?php echo "@".$row["username"]." - "; ?>
                                 <?php echo $row["add_date"]; ?>
                             </div>
@@ -94,33 +96,47 @@ include 'header.php';
                                 </form>
                             </div>
                         </div>
+                            <?php
+                                $sql = "SELECT id, comment_id, comment_text, userview, username, reg_date FROM comments WHERE $id=comment_id";
+                                $polaczenie = $conn->query($sql);
+    
+                                if ($polaczenie->num_rows > 0) {
+                                // output data of each row
+                                while($com = $polaczenie->fetch_assoc()) {
+                            ?>
+                            <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
-                                        <?php echo "@".$row["username"]." - "; ?>
-                                        <?php echo $row["reg_date"]; ?>
+                                        <span style="font-weight: bold;"><?php echo $com["userview"]; ?></span>
+                                        <?php echo "@".$com["username"]." - "; ?>
+                                        <?php echo $com["reg_date"]; ?>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <p class="lh-sm">
                                             <?php 
-                                               
-                                                echo $row["comment_text"];
-                                                
+                                               if ($id == $com['comment_id'])
+                                               {
+                                                echo $com["comment_text"] ;
+                                               }
                                             ?>
                                         </p>
                                     </div>
                                 </div>
+                            </div>
                         <?php
-                        }
-                            } else {
-                            echo "0 results";
+                                }
                             }
+                        }
+                    } else {
+                    echo "0 results";
+                    }
                             $conn->close();
                         ?>
                     </div>
                 </section>
+                
                 <!-- Koniec sekcji postów -->
             </div>
         </div>
