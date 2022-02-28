@@ -19,14 +19,17 @@ include 'header.php';
             <!-- Lewa strona okna, jest tam menu oraz informacje o użytkowniku -->
             <div class="TwitteProfile">
                 <?php
-                    echo "<p>Witaj ".$_SESSION['userview'].'! [ <a href="logout.php">Wyloguj się!</a> ]</p>';
+                    echo "<p>Witaj ".$_SESSION['userview'].'!</p>';
                 ?>
 
-                <aside>
-                    <nav>
-                        Menu 
+                <section>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" aria-current="page" href="profil.php">Profil</a>
+                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </nav>
-                </aside>
+                </section>
             </div>
         </div>
 
@@ -70,14 +73,18 @@ include 'header.php';
                             <hr>
                         <div class="row">
                             <div class="col">
-                                <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
-                                <?php echo "@".$row["username"]." - "; ?>
-                                <?php echo $row["add_date"]; ?>
+                                <small>
+                                    <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
+                                    <?php echo "@".$row["username"]." - "; ?>
+                                    <?php echo $row["add_date"]; ?>
+                                </small>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <p class="lh-sm"><?php echo $row["posttext"]; ?></p>
+                                <small>
+                                    <p class="lh-sm"><?php echo $row["posttext"]; ?></p>
+                                </small>
                             </div>
                         </div>            
                         <div class="row">
@@ -107,20 +114,24 @@ include 'header.php';
                             <div class="container">
                                 <div class="row">
                                     <div class="col">
-                                        <span style="font-weight: bold;"><?php echo $com["userview"]; ?></span>
-                                        <?php echo "@".$com["username"]." - "; ?>
-                                        <?php echo $com["reg_date"]; ?>
+                                        <small>
+                                            <span style="font-weight: bold;"><?php echo $com["userview"]; ?></span>
+                                            <?php echo "@".$com["username"]." - "; ?>
+                                            <?php echo $com["reg_date"]; ?>
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <p class="lh-sm">
-                                            <?php 
-                                               if ($id == $com['comment_id'])
-                                               {
-                                                echo $com["comment_text"] ;
-                                               }
-                                            ?>
+                                            <small>
+                                                <?php 
+                                                    if ($id == $com['comment_id'])
+                                                    {
+                                                        echo $com["comment_text"] ;
+                                                    }
+                                                ?>
+                                            </small>
                                         </p>
                                     </div>
                                 </div>
