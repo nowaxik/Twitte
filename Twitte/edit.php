@@ -7,20 +7,15 @@
 		header('Location: index.php');
 		exit();
 	}
-	
 
-
-
-include 'connect.php';
-$user_id = $_SESSION['id'];
-// Sprawdzenie połączenia
-if ($conn->connect_error) {
-  die("Połącznie nie powiodło się, to jest powód: " . $conn->connect_error);
-}
-echo "Połączono z serwerem i bazą danych";
-
-
-
+        include 'connect.php';
+        $user_id = $_SESSION['id'];
+        // Sprawdzenie połączenia
+        if ($conn->connect_error) {
+        die("Połącznie nie powiodło się, to jest powód: " . $conn->connect_error);
+        }
+        echo "Połączono z serwerem i bazą danych";
+        
     $userview = $_POST['userview'];
     $username = $_POST['username'];
     $dates = $_POST['dates'];
