@@ -11,7 +11,7 @@
 
 <?php
 include 'header.php';
-$img = $_SESSION['img'];
+$user_id = $_SESSION['id'];
 ?>
 <!-- Główne okno siatki -->
 <div class="container-md">
@@ -23,7 +23,7 @@ $img = $_SESSION['img'];
                     echo "<p>Witaj ".$_SESSION['userview'].'!</p>';
                 ?>
                 <section>
-                    <img src="image/<?php echo $img ?>" class="img-circle" alt="Zdjecie profilowe" width="236" height="236">
+                    
                 </section>
                 <section>
                     <?php include 'nav.php'; ?>
@@ -47,13 +47,6 @@ $img = $_SESSION['img'];
                 <section>
                     <div class="container">
                         <?php
-                            $servername = "localhost"; //Nazwa serwera
-                            $username = "root"; //Nazwa użytkownika
-                            $password = ""; //Hasło do konta użytkownika
-                            $dbname = "twitte"; //Nazwa bazy danych
-
-                            // Create connection
-                            $conn = new mysqli($servername, $username, $password, $dbname);
                             // Check connection
                             if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
