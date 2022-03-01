@@ -30,3 +30,7 @@ font-family: sans-serif;
     border-top: 1px solid lightslategray;
     padding-top: 3%;
 }
+
+.imgRadius {
+    border-radius: 100px;
+}
