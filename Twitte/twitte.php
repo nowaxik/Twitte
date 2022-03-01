@@ -11,6 +11,7 @@
 
 <?php
 include 'header.php';
+$img = $_SESSION['img'];
 ?>
 <!-- Główne okno siatki -->
 <div class="container-md">
@@ -21,10 +22,12 @@ include 'header.php';
                 <?php
                     echo "<p>Witaj ".$_SESSION['userview'].'!</p>';
                 ?>
-
+                <section>
+                    <img src="image/<?php echo $img ?>" class="img-circle" alt="Zdjecie profilowe" width="236" height="236">
+                </section>
                 <section>
                     <?php include 'nav.php'; ?>
-                </section>
+                </section> 
             </div>
         </div>
 
@@ -64,7 +67,9 @@ include 'header.php';
                             while($row = $result->fetch_assoc()) {
                                 
                         ?>
-                            <?php $id = $row['id']; ?>
+                            <?php 
+                                $id = $row['id']; 
+                            ?>
                             <hr>
                         <div class="row">
                             <div class="col">
