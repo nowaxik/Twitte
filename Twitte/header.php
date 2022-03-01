@@ -1,3 +1,6 @@
+<?php
+include 'connect.php';
+?>
 <!DOCTYPE HTML>
 <html lang="pl">
 
