@@ -11,6 +11,7 @@
 
 <?php
 include 'header.php';
+$user_id = $_SESSION['id'];
 ?>
 <!-- Główne okno siatki -->
 <div class="container-md">
@@ -47,6 +48,7 @@ include 'header.php';
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                     ?>
+                        <!-- Edycja danych o użytkowniku -->
                         <h3>Twój profil</h3>
                         <br>
                         <form action="edit.php" method="POST">
@@ -71,13 +73,23 @@ include 'header.php';
                                 <input type="text" class="form-control" id="exampleFormControlInput1" name="pass" value="<?php echo $row['pass']; ?>">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Zdjęcie profilowe</label>
-                                <input type="file" class="form-control" id="formFile" name="img" value="<?php echo $row['img']; ?>">
-                            </div>
-                            <div class="mb-3">
                                 <button type="submit" name="submit" class="btn btn-primary btn-sm">Edytuj</button>
                             </div>
                         </form>
+                        <br>
+                        <!-- Dodawanie zdjęcia profilowego -->
+                        <h3>Zdjęcie profilowe</h3>
+                        <br>
+                        <form action="upload.php" method="POST" enctype="multipart/form-data"> 
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Dodaj zdjęcie</label>
+                                <input type="file" class="form-control" id="exampleFormControlInput1" name="img" value="<?php echo $row['img']; ?>">
+                            </div>
+                            <div class="mb-3">
+                                <button type="submit" name="submit" class="btn btn-primary btn-sm">Prześlij zdjęcie</button>
+                            </div>
+                        </form>
+
                     <?php
                             }
                         } else {
