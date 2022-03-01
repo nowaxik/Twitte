@@ -21,11 +21,10 @@
     $dates = $_POST['dates'];
     $email = $_POST['email'];
     $pass = $_POST['pass'];
-    $img = $_POST['img'];
 
     //Skrypt dodania danych do tabeli
     //"name" to nazwa tabeli
-    $sql = "UPDATE users SET userview='$userview', username='$username', dates='$dates', email='$email', pass='$pass', img='$img' WHERE id='$user_id'";
+    $sql = "UPDATE users SET userview='$userview', username='$username', dates='$dates', email='$email', pass='$pass' WHERE id='$user_id'";
 
     if ($conn->query($sql) === TRUE) {
         echo "Dane zostały poprawnie zmienione <br>";
