@@ -59,7 +59,7 @@ $img = $_SESSION['img'];
                             die("Connection failed: " . $conn->connect_error);
                             }
 
-                            $sql = "SELECT id, posttext, userview, username, heart, add_date FROM homepage";
+                            $sql = "SELECT post_id, posttext, userview, username, heart, add_date FROM homepage";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -68,7 +68,7 @@ $img = $_SESSION['img'];
                                 
                         ?>
                             <?php 
-                                $id = $row['id']; 
+                                $id = $row['post_id']; 
                             ?>
                             <hr>
                         <div class="row">
@@ -93,7 +93,7 @@ $img = $_SESSION['img'];
                                 <form action="addComment.php" method="POST" class="row g-2">
                                     <div class="col-10">
                                         <input type="text" class="form-control form-control-sm" name="comment" placeholder="Wpisz swój komentarz..." aria-label=".form-control-sm example"><br>
-                                        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+                                        <input type="hidden" name="id" value="<?php echo $row["post_id"]; ?>">
                                         <input type="hidden" name="userviewcom" value="<?php echo $row["userview"]; ?>">
                                         <input type="hidden" name="usernamecom" value="<?php echo $row["username"]; ?>">
                                     </div>
