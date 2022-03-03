@@ -116,16 +116,18 @@ $user_id = $_SESSION['id'];
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="lh-sm">
-                                            <small>
-                                                <?php 
-                                                    if ($id == $com['comment_id'])
-                                                    {
-                                                        echo $com["comment_text"] ;
-                                                    }
-                                                ?>
-                                            </small>
-                                        </p>
+                                        <div class="commentView">
+                                            <p class="commentText">
+                                                <small>
+                                                    <?php 
+                                                        if ($id == $com['comment_id'])
+                                                        {
+                                                            echo $com["comment_text"] ;
+                                                        }
+                                                    ?>
+                                                </small>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
