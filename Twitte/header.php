@@ -10,6 +10,9 @@ include 'connect.php';
 <meta name="description" content="Społecznościowy portal do wymiany informacji" />
 <meta name="keywords" content="" />
 
+<!-- Ikona na karcie przeglądarki -->
+<link rel="shortcut icon" href="icon/twitter16.png">
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +23,9 @@ include 'connect.php';
 
 <!-- Mój własny plik CSS -->
 <link rel="stylesheet" href="style.css">
-<title>Twitte</title>
+
+<!-- Tytul strony -->
+<title>Twitte - Wewnętrzny portal społecznościowy</title>
 </head>
 
 <script>
