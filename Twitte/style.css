@@ -49,3 +49,13 @@ font-family: sans-serif;
     line-height: 1.2;
     text-align: justify;
 }
+
+/* Strona logowania */
+.form {
+    border: 1px solid rgba(127, 127, 126, 0.20);
+    padding: 20px;
+}
+
+.logoLogin {
+    margin: 15px;
+}
