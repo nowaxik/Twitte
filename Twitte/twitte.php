@@ -33,7 +33,7 @@ $user_id = $_SESSION['id'];
             <!-- Prawa strona okna, jest tam formularz do dodawania wiadomości oraz wyświetlanie wiadomości -->
             <div class="TwittePost">
                 <!-- Sekcja dodawania wiadomości -->
-                <h3>Home Page</h3><br>
+                <h3><img src="icon/twitter32.png"> Home Page</h3><br>
                 <section>
                     <form action="addTwitte.php" method="post">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Wpisz tekst wiadomości..." name="posttext"></textarea><br>
