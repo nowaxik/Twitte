@@ -20,13 +20,23 @@ $user_id = $_SESSION['id'];
             <!-- Lewa strona okna, jest tam menu oraz informacje o użytkowniku -->
             <div class="TwitteProfile">
                 <?php
-                    echo "<p>Witaj ".$_SESSION['userview'].'!</p>';
+                    echo "Witaj <b>".$_SESSION['userview'].'!</b>';
                     $id_user = $_SESSION['id'];
                 ?>
-
+                <!-- Wyświetlenie odliczania ważności Sesji-->
+                <section>
+                    <script src="js/main.js"></script>
+                        <small>
+                            Sesja wygaśnie za:
+                            <p></p>
+                        </small>
+                </section>
+                <!-- Konic wyświetlania zegara -->
+                <!-- Menu -->
                 <section>
                     <?php include 'nav.php'; ?>
-                </section>
+                </section> 
+                <!-- Koniec Menu -->
             </div>
         </div>
 
