@@ -45,6 +45,7 @@ if ($conn->query($sql) === TRUE) {
       email VARCHAR(50) NOT NULL,
       pass VARCHAR(50) NOT NULL,
       img BLOB NOT NULL,
+      status text(10) NOT NULL,
       reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
       )";
   
