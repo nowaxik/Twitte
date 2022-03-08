@@ -38,10 +38,12 @@ $user_id = $_SESSION['id'];
                     <?php include 'nav.php'; ?>
                 </section> 
                 <br>
-                <?php
-                    //Funkcja wyświetlających zarejestrowanych użytkowników serwisu
-                    ShowUsers();
-                ?>
+                <small>
+                    <?php
+                        //Funkcja wyświetlających zarejestrowanych użytkowników serwisu
+                        ShowUsers();
+                    ?>
+                </small>
                 <!-- Koniec Menu -->
             </div>
         </div>
