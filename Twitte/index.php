@@ -20,7 +20,8 @@ include 'header.php';
                         <input class="form-control" id="exampleInputEmail1" type="password" name="pass" /><br>
                         <button type="submit"name="send" class="btn btn-primary">Wyślij</button>
                     </div>
-            </form>
+                </form>
+                <a class="link" href="Registration/index.php">Rejestracja</a>
             </div>
         </div>
     </div>
