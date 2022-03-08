@@ -81,6 +81,7 @@ $user_id = $_SESSION['id'];
                                     <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
                                     <?php echo "@".$row["username"]." - "; ?>
                                     <?php echo $row["add_date"]; ?>
+                                    <a class="imgDeletePost" href="deletePost.php?id=<?php echo $id; ?>"><img src="icon/x.png"></a>
                                 </small>
                             </div>
                         </div>
@@ -114,6 +115,7 @@ $user_id = $_SESSION['id'];
                                 if ($polaczenie->num_rows > 0) {
                                 // output data of each row
                                 while($com = $polaczenie->fetch_assoc()) {
+                                    $comm_id = $com["id"];
                             ?>
                             <div class="container">
                                 <div class="row">
@@ -122,6 +124,9 @@ $user_id = $_SESSION['id'];
                                             <span style="font-weight: bold;"><?php echo $com["userview"]; ?></span>
                                             <?php echo "@".$com["username"]." - "; ?>
                                             <?php echo $com["reg_date"]; ?>
+                                            <a class="imgDeleteComment" href="deleteComment.php?id=<?php echo $comm_id; ?>">
+                                                <img src="icon/x.png">
+                                            </a>
                                         </small>
                                     </div>
                                 </div>
