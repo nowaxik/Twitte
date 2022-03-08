@@ -37,6 +37,11 @@ $user_id = $_SESSION['id'];
                 <section>
                     <?php include 'nav.php'; ?>
                 </section> 
+                <br>
+                <?php
+                    //Funkcja wyświetlających zarejestrowanych użytkowników serwisu
+                    ShowUsers();
+                ?>
                 <!-- Koniec Menu -->
             </div>
         </div>
