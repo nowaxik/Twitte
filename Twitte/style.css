@@ -71,3 +71,7 @@ font-family: sans-serif;
 .logoLogin {
     margin: 15px;
 }
+
+.link {
+    text-decoration: none;
+}
