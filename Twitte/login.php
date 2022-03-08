@@ -23,7 +23,8 @@
 		
 		$login = htmlentities($login, ENT_QUOTES, "UTF-8");
 		$haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");
-	
+
+
 		if ($rezultat = @$polaczenie->query(
 		sprintf("SELECT * FROM users WHERE username='%s' AND pass='%s'",
 		mysqli_real_escape_string($polaczenie,$login),
@@ -41,10 +42,24 @@
 				$_SESSION['email'] = $wiersz['email'];
 				$_SESSION['reg_data'] = $wiersz['reg_data'];
 				$_SESSION['img'] = $wiersz['img'];
+				$updateID = $_SESSION['id'];
 				
+				if ($conn->connect_error) {
+					die("Connection failed: " . $conn->connect_error);
+				  }
+				  
+				$sql = "UPDATE users SET status='online' WHERE id=$updateID";
+				if ($conn->query($sql) === TRUE) {
+					echo "Record updated successfully";
+				  } else {
+					echo "Error updating record: " . $conn->error;
+				  }
+
 				unset($_SESSION['blad']);
 				$rezultat->free_result();
 				header('Location: twitte.php');
+
+				
 				
 			} else {
 				
