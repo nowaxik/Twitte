@@ -37,6 +37,10 @@ font-family: sans-serif;
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
+.imgRadiusShort {
+    border-radius: 100px;
+}
+
 .imgDeletePost {
     position: relative;
     left: 262px;
