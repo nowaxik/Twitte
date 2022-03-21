@@ -8,7 +8,7 @@
 		exit();
 	}
 
-	require_once "connect.php";
+	require_once "admin/connect.php";
 
 	$polaczenie = @new mysqli($servername, $username, $password, $dbname);
 	
@@ -57,7 +57,7 @@
 
 				unset($_SESSION['blad']);
 				$rezultat->free_result();
-				header('Location: twitte.php');
+				header('Location: admin/twitte.php');
 
 				
 				
