@@ -30,7 +30,8 @@ function ShowUsers() {
    $conn->close();
 
 }
-
+//Funkcja wyświetlająca małe zdjęcie profilowe przy
+//Postach 
 function ShortImage() {
   include 'connect.php';
 
@@ -50,11 +51,9 @@ function ShortImage() {
           {             
     echo "<img src='img/".$minimg['img']."' class='imgRadiusShort' alt='Zdjecie profilowe' width='32' height='32'>";
           }
-
     }
   }
-
-
+  $conn->close();
 }
 
 ?>
