@@ -11,10 +11,10 @@ If all the files have been properly transferred to the server your eyes should s
 
 After clicking the appropriate link you will be taken to the installation form. Fill in all the fields: 
 
-1. server address
-2. database name
-3. database user name
-4. database user password
+1. Server address
+2. Database name
+3. Database user name
+4. Database user password
 
 If all the fields have been filled in correctly, the whole installation should go without any problems, and you will see the information that the installation was successful. After a successful installation it is time to register your profile.
 
@@ -26,8 +26,8 @@ A form will appear in which you must fill in all the fields:
 
 1. Login 
 2. Password
-3. name that will be displayed (for example: first and last name)
-4. email address
+3. Name that will be displayed (for example: first and last name)
+4. Email address
 5. Date of birth
 
 If all the fields have been filled in correctly, the whole registration process should pass without any problems and you will be taken to the login page where you will be able to log in to the service for the first time.
