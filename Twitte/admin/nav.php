@@ -1,23 +1,12 @@
+<?php
+  include_once 'function.php';
+?>
+
 <!-- Wyświetlenie zdjęcia profilowego -->
   <?php
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-      }
-
-        $zdjecie = "SELECT img FROM users WHERE id=$user_id";
-        $obraz = $conn->query($zdjecie);
-
-        if ($obraz->num_rows > 0) {
-        // output data of each row
-        while($mno = $obraz->fetch_assoc()) {
+    ShowFoto();
   ?>
-                            
-    <img src="img/<?php echo $mno["img"]; ?>" class="imgRadius" alt="Zdjecie profilowe" width="200" height="200">
-
-  <?php
-    }
-  }
-  ?>
+  
 <br>
 <br>
 <nav class="nav flex-column">
