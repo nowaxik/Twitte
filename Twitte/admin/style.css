@@ -6,7 +6,7 @@ font-family: sans-serif;
 .formAuto {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 55%;
     padding: 3%;
 }
 
@@ -17,13 +17,17 @@ font-family: sans-serif;
 
 /* Strona Twitte */
 .TwitteProfile {
+    width: 250px;
     margin-left: auto;
     padding-top: 3%;
 }
 
 .TwittePost {
+    width: 700px;
     margin-right: auto;
-    padding-top: 3%;
+    padding: 3%;
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .Post {
@@ -78,4 +82,9 @@ font-family: sans-serif;
 
 .link {
     text-decoration: none;
+}
+
+/* Stopka */
+footer {
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
 }
