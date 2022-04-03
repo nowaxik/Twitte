@@ -25,6 +25,7 @@
 <title>Twitte - Wewnętrzny portal społecznościowy</title>
 </head>
 
+
 <script>
 var toastTrigger = document.getElementById('liveToastBtn')
 var toastLiveExample = document.getElementById('liveToast')
@@ -36,4 +37,5 @@ if (toastTrigger) {
   })
 }
 </script>
+
 <body>
