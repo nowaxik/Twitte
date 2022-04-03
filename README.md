@@ -5,7 +5,7 @@ Installation
 
 Place the files in a local directory if you are using software that imitates a server (for example: xampp, lamp) or upload the files to an external server and place them in the appropriate directory. 
 
-Then type in your browser the appropriate address to your local server (https://localhost) or the external server (your apache2 server address).
+Then type in your browser the appropriate address to your local server (http://localhost/) or the external server (your apache2 server address).
 
 If all the files have been properly transferred to the server your eyes should see the form for logging into the service. Below the form there are two links Registration and Installation. Click the Installation link. 
 
