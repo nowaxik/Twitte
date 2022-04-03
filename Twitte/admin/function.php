@@ -60,6 +60,7 @@ function ShortImage() {
 ?>
 
 <?php
+//Funkcja wyświetlająca zdjęcie profilowe
 function ShowFoto() {
   include 'connect.php';
   
