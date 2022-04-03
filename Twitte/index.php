@@ -1,8 +1,10 @@
+<!-- Strona głowna portalu Twitte -->
+
 <?php
 include 'header.php';
 ?>
 
-
+<!-- Formularz logowania do portalu -->
 <section class="container-sm">
     <div class="row">
         <div class="formAuto">
@@ -21,7 +23,8 @@ include 'header.php';
                         <button type="submit"name="send" class="btn btn-primary">Wyślij</button>
                     </div>
                 </form>
-                <a class="link" href="Registration/index.php">Rejestracja</a>
+                <a class="link" href="Registration/index.php">Rejestracja</a> - 
+                <a class="link" href="Install/index.php">Instalacja</a>
             </div>
         </div>
     </div>
