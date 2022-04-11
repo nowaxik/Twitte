@@ -90,7 +90,17 @@ $user_Name = $_SESSION['username'];
                                     <span style="font-weight: bold;"><?php echo $row["userview"]; ?></span>
                                     <?php echo "@".$row["username"]." - "; ?>
                                     <?php echo $row["add_date"]; ?>
-                                    <a class="imgDeletePost" href="deletePost.php?id=<?php echo $id; ?>"><img src="icon/x.png"></a>
+                                        <!-- Rozwijany przycisk usuwania i edycji postu -->
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Edit
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="deletePost.php?id=<?php echo $id; ?>">Usuń</a></li>
+                                                <li><a class="dropdown-item disabled" href="#">Edytuj</a></li>
+                                            </ul>
+                                        </div>
+                                   <!-- <a class="imgDeletePost" href="deletePost.php?id=<?php echo $id; ?>"><img src="icon/x.png"></a> -->
                                 </small>
                             </div>
                         </div>
