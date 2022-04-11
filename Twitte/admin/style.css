@@ -35,6 +35,11 @@ font-family: sans-serif;
     padding-top: 3%;
 }
 
+.btn-group {
+    position: relative;
+    left: 242px;
+}
+
 .imgRadius {
     border-radius: 100px;
     border: 5px inset rgba(0, 0, 0, 0.3);
